@@ -2,6 +2,7 @@ package com.andile.student.management.application.model;
 
 
 import javax.persistence.*;
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -18,22 +19,14 @@ public class Student implements Serializable {
     private String address;
 
     @Transient
-    private String mobile;
+    public String mobile;
     private String email;
 
-    public Student(long id, String name, String address, String mobile, String email) {
+    public Student(String name, String address, String mobile, String email) {
         this.name = name;
         this.address = address;
         this.mobile = mobile;
         this.email = email;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
